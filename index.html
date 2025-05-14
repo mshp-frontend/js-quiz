@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квиз по Minecraft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Квиз по Minecraft</h1>
+        <div id="quiz-container">
+            <div id="start-container">
+                <h2>Проверьте свои знания Minecraft!</h2>
+                <p>В этом квизе вас ждут вопросы о самой популярной игре в мире.</p>
+                <button id="start-btn">Начать квиз</button>
+            </div>
+            <div id="question-container" style="display: none;">
+                <h2 id="question"></h2>
+                <div id="question-image"></div>
+                <div id="answers"></div>
+            </div>
+            <div id="result-container" style="display: none;">
+                <h2>Результат</h2>
+                <p id="score"></p>
+                <p id="comment"></p>
+                <button id="restart-btn">Начать заново</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
