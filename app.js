@@ -1,65 +1,58 @@
 // Массив с вопросами
 const questions = [
     {
-        question: "Какой моб взрывается?",
-        image: "images/01.jpg",
-        answers: ["Зомби", "Крипер", "Скелет", "Паук"],
-        correct: 1
+        question: 'Для начала выбери цвет, который тебе больше всего нравится.',
+        answers: ['Зелёный', 'Красный', 'Синий', 'Жёлтый'],
+        points: [1, 2, 3, 4],
     },
     {
-        question: "Из чего делают факел в Minecraft?",
-        image: "images/02.jpg",
-        answers: ["Дерево и уголь", "Палка и уголь", "Дерево и факел", "Палка и факел"],
-        correct: 1
+        question: 'Теперь выбери из предложенных то животное, которым тебе хочется быть.',
+        answers: ['Дикобраз', 'Золотая рыбка', 'Капибара', 'Хрюшка'],
+        points: [1, 3, 2, 4],
     },
     {
-        question: "Какое максимальное количество очков опыта может быть у игрока?",
-        image: "images/03.jpg",
-        answers: ["100", "1000", "Нет предела", "50"],
-        correct: 2
+        question: 'Выбери какое-либо блюдо.',
+        answers: ['Яичница с беконом', 'Набор пончиков', 'Борщ', 'Пюрешка с котлеткой'],
+        points: [4, 1, 3, 2],
     },
     {
-        question: "Какой моб появляется только ночью?",
-        image: "images/04.jpg",
-        answers: ["Фантом", "Крипер", "Свинозомби", "Эндермен"],
-        correct: 0
+        question: 'Выбери музыкальный стиль, который подходит тебе больше остальных.',
+        answers: ['Классическая музыка', 'K-POP', 'Джазз', 'Диско'],
+        points: [3, 4, 1, 2],
     },
     {
-        question: "Сколько блоков в высоту может прыгнуть игрок?",
-        image: "images/05.jpg",
-        answers: ["1 блок", "< 1.5 блока", "2 блока", "2.5 блока"],
-        correct: 1
+        question: 'Выбери стихию.',
+        answers: ['Вода', 'Огонь', 'Земля', 'Воздух'],
+        points: [1, 2, 4, 3],
     },
     {
-        question: "Какой предмет нужен для создания портала в Нижний мир?",
-        image: "images/06.jpg",
-        answers: ["Алмазы", "Обсидиан", "Незерит", "Лава"],
-        correct: 1
+        question: 'Представь, что ты не занимаешься программированием. Какую профессию выберешь?',
+        answers: ['Фокусник на детских праздниках', 'Пекарь в булочной', 'Строитель экологичных заводов', 'Дизайнер интерьерных наклеек'],
+        points: [2, 4, 3, 1],
+    },
+];
+
+const results = [
+    {
+        imageSrc: 'images/1.png',
+        imageAlt: 'Шишка-крутышка',
+        comment: 'Ты — шишка-крутышка! Ты знаешь, что являешься звездой школы. Продолжай ярко светить на небосклоне МШП и не забывай иногда спускаться к нам, простым смертным, чтобы выучить что-то новое.',
     },
     {
-        question: "Сколько сердец здоровья у игрока по умолчанию?",
-        image: "images/07.png",
-        answers: ["5", "10", "15", "20"],
-        correct: 1
+        imageSrc: 'images/2.png',
+        imageAlt: 'Шишка-шалунишка',
+        comment: 'Ты — шишка-шалунишка! Занятия ты воспринимаешь как приключения, а учителя и администраторы никогда не знают, чего от тебя ожидать. Мне кажется или даже сейчас ты продумываешь очередной пранк?',
     },
     {
-        question: "Какой моб дропает жемчуг Края?",
-        image: "images/08.jpg",
-        answers: ["Эндермен", "Крипер", "Дракон Края", "Шалкер"],
-        correct: 0
+        imageSrc: 'images/3.png',
+        imageAlt: 'Шишка-колдунишка',
+        comment: 'Ты — шишка-колдунишка! Непонятно, как можно так во всём преуспевать. У тебя настоящий талант к созданию проектов не только на основных, но и на спецкурсах. Возможно, ты пользуешься какой-то тайной магией. Научишь нас?',
     },
     {
-        question: "Какой блок нельзя сломать в режиме выживания?",
-        image: "images/09.jpg",
-        answers: ["Обсидиан", "Коренная порода", "Алмазный блок", "Командный блок"],
-        correct: 1
+        imageSrc: 'images/4.png',
+        imageAlt: 'Шишка-друзьишка',
+        comment: 'Ты — шишка-друзьишка! Ты любишь МШП за компанию единомышленников, которая здесь тебя окружает. Что может быть лучше, чем вместе  придумать и реализовать сложный проект, а после занятия сыграть компанией в какую-нибудь игру?',
     },
-    {
-        question: "Какое животное можно оседлать без седла?",
-        image: "images/10.jpeg",
-        answers: ["Лошадь", "Свинья", "Лама", "Никакое"],
-        correct: 3
-    }
 ];
 
 let currentQuestion = 0;
@@ -68,10 +61,10 @@ let score = 0;
 // Получаем элементы DOM
 const startContainer = document.getElementById('start-container');
 const questionElement = document.getElementById('question');
-const questionImageElement = document.getElementById('question-image');
 const answersElement = document.getElementById('answers');
 const questionContainer = document.getElementById('question-container');
 const resultContainer = document.getElementById('result-container');
+const coneImage = document.getElementById('cone-image');
 const scoreElement = document.getElementById('score');
 const commentElement = document.getElementById('comment');
 const startButton = document.getElementById('start-btn');
@@ -90,13 +83,6 @@ function showQuestion() {
     questionElement.textContent = question.question;
     answersElement.innerHTML = '';
     
-    // Отображаем изображение, если оно есть
-    if (question.image) {
-        questionImageElement.innerHTML = `<img src="${question.image}" alt="Изображение к вопросу">`;
-    } else {
-        questionImageElement.innerHTML = '';
-    }
-
     question.answers.forEach((answer, index) => {
         const button = document.createElement('button');
         button.textContent = answer;
@@ -116,44 +102,29 @@ function checkAnswer(selectedIndex) {
         button.disabled = true;
     }
 
-    // Подсвечиваем правильный и неправильный ответы
-    buttons[selectedIndex].classList.add(selectedIndex === question.correct ? 'correct' : 'incorrect');
-    buttons[question.correct].classList.add('correct');
+    // Увеличиваем счёт в зависимости от выбранного ответа
+    score += question.points[selectedIndex];
 
-    // Увеличиваем счет, если ответ правильный
-    if (selectedIndex === question.correct) {
-        score++;
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        showQuestion();
+        return;
     }
 
-    // Переходим к следующему вопросу через 1 секунду
-    setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-            showQuestion();
-        } else {
-            showResult();
-        }
-    }, 1000);
+    showResult();
 }
 
 // Функция для отображения результата
 function showResult() {
     questionContainer.style.display = 'none';
     resultContainer.style.display = 'block';
-    
-    scoreElement.textContent = `Правильных ответов: ${score} из ${questions.length}`;
-    
-    // Добавляем комментарий в зависимости от результата
-    const percentage = (score / questions.length) * 100;
-    if (percentage === 100) {
-        commentElement.textContent = "Отлично! Вы настоящий эксперт Minecraft!";
-    } else if (percentage >= 75) {
-        commentElement.textContent = "Хороший результат! Вы хорошо знаете игру!";
-    } else if (percentage >= 50) {
-        commentElement.textContent = "Неплохо! Есть куда расти!";
-    } else {
-        commentElement.textContent = "Попробуйте еще раз, чтобы улучшить результат!";
-    }
+
+    const cone = results[Math.floor(score / 5) - 1];
+
+    coneImage.setAttribute('src', cone.imageSrc);
+    coneImage.setAttribute('alt', cone.imageAlt);
+    commentElement.textContent = cone.comment;
 }
 
 // Функция для перезапуска квиза

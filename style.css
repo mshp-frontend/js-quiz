@@ -50,23 +50,6 @@ h2 {
     line-height: 1.8;
 }
 
-#question-image {
-    margin: 25px 0;
-    text-align: center;
-}
-
-#question-image img {
-    max-width: 100%;
-    max-height: 350px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-#question-image img:hover {
-    transform: scale(1.02);
-}
-
 #answers {
     display: flex;
     flex-direction: column;
@@ -76,7 +59,7 @@ h2 {
 
 .answer-btn {
     padding: 15px 25px;
-    background: linear-gradient(145deg, #4CAF50, #45a049);
+    background: linear-gradient(145deg, #4c87af, #457ba0);
     color: white;
     border: none;
     border-radius: 12px;
@@ -89,7 +72,7 @@ h2 {
 }
 
 .answer-btn:hover {
-    background: linear-gradient(145deg, #45a049, #3d8b40);
+    background: linear-gradient(145deg, #457ba0, #3d6c8b);
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -99,26 +82,13 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.answer-btn.correct {
-    background: linear-gradient(145deg, #2ecc71, #27ae60);
-    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
-}
-
-.answer-btn.incorrect {
-    background: linear-gradient(145deg, #e74c3c, #c0392b);
-    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2);
-}
-
 #result-container {
     text-align: center;
     padding: 20px;
 }
 
-#score {
-    font-size: 1.8em;
-    margin-bottom: 25px;
-    color: #2c3e50;
-    font-weight: 600;
+#cone-image {
+    height: 400px;
 }
 
 #comment {
@@ -130,7 +100,7 @@ h2 {
 
 #start-btn, #restart-btn {
     padding: 15px 30px;
-    background: linear-gradient(145deg, #4CAF50, #45a049);
+    background: linear-gradient(145deg, #4c87af, #457ba0);
     color: white;
     border: none;
     border-radius: 12px;
@@ -144,7 +114,7 @@ h2 {
 }
 
 #start-btn:hover, #restart-btn:hover {
-    background: linear-gradient(145deg, #45a049, #3d8b40);
+    background: linear-gradient(145deg, #457ba0, #3d6c8b);
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
