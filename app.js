@@ -2,31 +2,37 @@
 const questions = [
     {
         question: 'Для начала выбери цвет, который тебе больше всего нравится.',
+        image: 'images/question-1.jpg',
         answers: ['Зелёный', 'Красный', 'Синий', 'Жёлтый'],
         points: [1, 2, 3, 4],
     },
     {
         question: 'Теперь выбери из предложенных то животное, которым тебе хочется быть.',
+        image: 'images/question-2.jpg',
         answers: ['Дикобраз', 'Золотая рыбка', 'Капибара', 'Хрюшка'],
         points: [1, 3, 2, 4],
     },
     {
         question: 'Выбери какое-либо блюдо.',
+        image: 'images/question-3.jpg',
         answers: ['Яичница с беконом', 'Набор пончиков', 'Борщ', 'Пюрешка с котлеткой'],
         points: [4, 1, 3, 2],
     },
     {
         question: 'Выбери музыкальный стиль, который подходит тебе больше остальных.',
+        image: 'images/question-4.jpg',
         answers: ['Классическая музыка', 'K-POP', 'Джаз', 'Диско'],
         points: [3, 4, 1, 2],
     },
     {
         question: 'Выбери стихию.',
+        image: 'images/question-5.jpg',
         answers: ['Вода', 'Огонь', 'Земля', 'Воздух'],
         points: [1, 2, 4, 3],
     },
     {
         question: 'Представь, что ты не занимаешься программированием. Какую профессию выберешь?',
+        image: 'images/question-6.jpg',
         answers: ['Фокусник на детских праздниках', 'Пекарь в булочной', 'Строитель экологичных заводов', 'Дизайнер интерьерных наклеек'],
         points: [2, 4, 3, 1],
     },
@@ -61,6 +67,7 @@ let score = 0;
 // Получаем элементы DOM
 const startContainer = document.getElementById('start-container');
 const questionElement = document.getElementById('question');
+const questionImageElement = document.getElementById('question-image');
 const answersElement = document.getElementById('answers');
 const questionContainer = document.getElementById('question-container');
 const resultContainer = document.getElementById('result-container');
@@ -82,6 +89,13 @@ function showQuestion() {
     const question = questions[currentQuestion];
     questionElement.textContent = question.question;
     answersElement.innerHTML = '';
+    
+    // Отображаем изображение, если оно есть
+    if (question.image) {
+        questionImageElement.innerHTML = `<img src="${question.image}" alt="Изображение к вопросу">`;
+    } else {
+        questionImageElement.innerHTML = '';
+    }
     
     question.answers.forEach((answer, index) => {
         const button = document.createElement('button');

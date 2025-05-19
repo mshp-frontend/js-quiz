@@ -50,6 +50,23 @@ h2 {
     line-height: 1.8;
 }
 
+#question-image {
+    margin: 25px 0;
+    text-align: center;
+}
+
+#question-image img {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#question-image img:hover {
+    transform: scale(1.02);
+}
+
 #answers {
     display: flex;
     flex-direction: column;
